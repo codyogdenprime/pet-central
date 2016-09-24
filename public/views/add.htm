@@ -1,6 +1,7 @@
-<form>
-<input type="text" placeholder="Pet Name" />
-<input type="text" placeholder="Age" />
-<input type="text" placeholder="Species" />
-<input type="text" placeholder="Image URL" />
+<form ng-submit="addPet()">
+	<input type="text" ng-model="pet_name" placeholder="Pet Name" />
+	<input type="text" ng-model="pet_age" placeholder="Age" />
+	<input type="text" ng-model="pet_type" placeholder="Species" />
+	<input type="text" ng-model="pet_photo" placeholder="Image URL" />
+	<input type="submit" />
 </form>
