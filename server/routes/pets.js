@@ -46,11 +46,11 @@ pets.route( '/' )
 		res.send( result );
 	});
 } )
-.delete( ( req, res ) => {
+.patch( ( req, res ) => {
 	console.log( 'DELETE /pets', req.body );
 
 	// Delete a pet. Only the id is sent, so just put the whole body in there. YOLO
-	Pet.remove( req.body, ( err, result ) => {
+	Pet.find( req.body ).remove( ( err, result ) => {
 		if( err )
 			return console.log( 'Mongoose Err:', err );
 

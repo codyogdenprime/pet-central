@@ -77,21 +77,23 @@ myApp.controller( 'viewController', [ '$scope', '$http', function( $scope, $http
 	$scope.removePet = function() {
 		console.log( 'delete pet', this.pet._id );
 
-		// Create Pet Object
-		var petObj = {
-			_id: this.pet._id
-		};
-		console.log( 'Delete this pet:', petObj );
-
 		// Make the user confirm deletion
 		var confirmDelete = confirm( 'Are you sure you want to delete ' + this.pet.name + '?' );
 
 		// If the user confirms
 		if( confirmDelete ){
 			// Run the DELETE call
+
+			// Create Pet Object
+			var petObj = {
+				_id: this.pet._id
+			};
+			console.log( 'petObj:', petObj );
+
 			$http({
-				method: 'DELETE',
-				url: '/pets'
+				method: 'PATCH',
+				url: '/pets',
+				data: petObj
 			}).then( function( result ) {
 				console.log( 'DELETE result', result );
 				// Display the pets again
