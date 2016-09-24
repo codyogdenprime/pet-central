@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sources":["../src/compile.css"],"names":[],"mappings":"AAAA,KAAK,eAAe,aAAa,CAAC,OAAO,qBAAqB,oBAAa,AAAb,aAAa,WAAW,yBAA6B,AAA7B,6BAA6B,SAAS,SAAS,CAAC","file":"style.css","sourcesContent":["body{max-width:50em;margin:0 auto}nav ul{list-style-type:none;display:flex;width:100%;justify-content:space-around;margin:0;padding:0}\n"]}

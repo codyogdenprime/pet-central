@@ -6,20 +6,21 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
-    "autoprefixer": "^6.4.1",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "mongoose": "^4.6.1",
+    "normalize.css": "^4.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.1",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "mongoose": "^4.6.1",
-    "normalize.css": "^4.2.0"
+    "grunt-postcss": "^0.8.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

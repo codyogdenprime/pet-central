@@ -43,21 +43,14 @@ myApp.controller( 'addController', [ '$scope', '$http', '$location', function( $
 			url: '/pets',
 			data: petObj
 		}).then( function( result ) {
-
 			console.log( 'Added!', result );
 
 			$location.path( 'pets' );
-
 		});
-
 	};
-
-	// $location.path( 'pets' ); // Change the location once the pet is added.
-
 }]);
 
-myApp.controller( 'viewController', [ '$scope', '$http', '$location', function( $scope, $http, $location ) {
-
+myApp.controller( 'viewController', [ '$scope', '$http', function( $scope, $http ) {
 	console.log( 'View Pets Controller' );
 
 	$scope.pets = [];
@@ -76,36 +69,31 @@ myApp.controller( 'viewController', [ '$scope', '$http', '$location', function( 
 	};
 
 	// Display pets on load
-
 	$scope.displayPets();
 
 	$scope.removePet = function() {
-
 		console.log( 'delete pet', this.pet._id );
 
+		// Create Pet Object
 		var petObj = {
-
 			_id: this.pet._id
-
 		};
-
 		console.log( 'Delete this pet:', petObj );
 
+		// Make the user confirm deletion
 		var confirmDelete = confirm( 'Are you sure you want to delete ' + this.pet.name + '?' );
 
+		// If the user confirms
 		if( confirmDelete ){
+			// Run the DELETE call
 			$http({
 				method: 'DELETE',
 				url: '/pets'
 			}).then( function( result ) {
-
 				console.log( 'DELETE result', result );
-
+				// Display the pets again
 				$scope.displayPets();
-
 			});
 		}
-
 	};
-
 }]);
