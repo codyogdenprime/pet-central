@@ -13,6 +13,7 @@ const mongoURI = config.db_url;
 const mongoose = require('mongoose');
 
 // Require Pets Model
+const Pet = require( filepath.resolve( './server/models/pets' ) );
 
 pets.route( '/' )
 .get( ( req, res ) => {

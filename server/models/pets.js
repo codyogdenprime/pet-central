@@ -13,7 +13,7 @@ var pet = new Schema({
 });
 
 // Create a mongo model
-var Pet = mongoose.model( 'pets', assignment );
+var Pet = mongoose.model( 'pets', pet );
 
 // Send that back
 module.exports = Pet;
