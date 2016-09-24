@@ -1,22 +1,21 @@
 var myApp = angular.module("myApp", ["ngRoute"]);
-
 myApp.config(["$routeProvider", function($routeProvider){
-    $routeProvider.
-      when("/home", {
-        templateUrl: "/views/about.htm",
-        controller: 'homeController'
-      }).
-      when("/add", {
-        templateUrl: "/views/add.htm",
-        controller: 'addController'
-      }).
-      when("/pets", {
-        templateUrl: "/views/pets.htm",
-        controller: 'viewController'
-      }).
-      otherwise({
-        redirectTo: "/home"
-      });
+	$routeProvider.
+	when("/home", {
+		templateUrl: "/views/about.htm",
+		controller: 'homeController'
+	}).
+	when("/add", {
+		templateUrl: "/views/add.htm",
+		controller: 'addController'
+	}).
+	when("/pets", {
+		templateUrl: "/views/pets.htm",
+		controller: 'viewController'
+	}).
+	otherwise({
+	
+	});
 }]);
 
 myApp.controller( 'homeController', [ '$scope', function( $scope ) {

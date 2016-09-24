@@ -1,6 +1,18 @@
+// Add path module
 const filepath = require( 'path' );
+
+// Require Config Module
+const config = require( filepath.resolve( './config' ) );
+
+// Setup Express Router
 const express = require( 'express' );
 const pets = express.Router();
+
+// Setup MongDB
+const mongoURI = config.db_url;
+const mongoose = require('mongoose');
+
+// Require Pets Model
 
 pets.route( '/' )
 .get( ( req, res ) => {
