@@ -13,27 +13,45 @@ const mongoURI = config.db_url;
 const mongoose = require('mongoose');
 
 // Require Pets Model
-const Pet = require( filepath.resolve( './server/models/pets' ) );
+const Pet = require( '../models/pets' );
 
 pets.route( '/' )
 .get( ( req, res ) => {
-
 	console.log( ' /pets', req.body );
 
+	Pet.find( ( err, result ) => {
+		if( err )
+			return console.log( 'Mongoose Err:', err );
+
+		res.send( result );
+	});
 } )
 .post( ( req, res ) => {
-
 	console.log( ' /pets', req.body );
 
-} )
-.put( ( req, res ) => {
+	var newPet = new Pet({
+		name: req.body.name,
+		age: req.body.age,
+		species: req.body.species,
+		image_url: req.body.image_url
+	});
 
-	console.log( ' /pets', req.body );
+	newPet.save( ( err, result ) => {
+		if( err )
+			return console.log( 'Mongoose Err:', err );
 
+		res.send( result );
+	});
 } )
 .delete( ( req, res ) => {
-
 	console.log( ' /pets', req.body );
+
+	Pet.remove( { _id: req.body.id }, ( err, result ) => {
+		if( err )
+			return console.log( 'Mongoose Err:', err );
+
+		res.send( result );
+	});
 
 } );
 
