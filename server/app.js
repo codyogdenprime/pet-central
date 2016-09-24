@@ -16,6 +16,7 @@ app.use( bodyParser.json() );
 // Open up some public files
 app.use( express.static( filepath.resolve( '../node_modules/normalize.css/') ) );
 app.use( express.static( filepath.resolve( './node_modules/angular') ) );
+app.use( express.static( filepath.resolve( './node_modules/angular-route') ) );
 app.use( express.static( filepath.resolve( './public/') ) );
 
 // Listen up!

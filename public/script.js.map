@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/compile.js"],"names":["myApp","angular","module","controller","$scope","console","log"],"mappings":"AAAA,GAAIA,OAAQC,QAAQC,OAAQ,WAE5BF,OAAMG,WAAY,YAAc,SAAU,SAAUC,GAEnDC,QAAQC,IAAK","file":"script.js"}
+{"version":3,"sources":["../src/compile.js"],"names":["myApp","angular","module","config","$routeProvider","when","templateUrl","otherwise","redirectTo"],"mappings":"AAAA,GAAIA,OAAQC,QAAQC,OAAO,SAAU,WAErCF,OAAMG,QAAQ,iBAAkB,SAASC,GACrCA,EACEC,KAAK,SACHC,YAAa,qBAEfD,KAAK,QACHC,YAAa,mBAEfD,KAAK,SACHC,YAAa,oBAEfC,WACEC,WAAY","file":"script.js"}

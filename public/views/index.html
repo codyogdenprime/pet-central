@@ -6,23 +6,20 @@
 		<ling href="normalize.css" rel="stylesheet" />
 		<link href="style.css" rel="stylesheet" />
 		<script src="angular.js"></script>
+		<script src="angular-route.js"></script>
 		<script src="script.js"></script>
 	</head>
 	<body ng-app="myApp">
 		<header>
 			<nav>
-					
 				<ul>
-
-					<li>Home</li>
-					<li>View Pets</li>
-					<li>Add Pet</li>
-
+					<li><a href="#home">Home</a></li>
+					<li><a href="#pets">View Pets</a></li>
+					<li><a href="#add">Add Pet</a></li>
 				</ul>
-
 			</nav>
 		</header>
-		<main ng-controller="mainView"></main>
+		<main ng-view></main>
 		<footer></footer>
 	</body>
 </html>

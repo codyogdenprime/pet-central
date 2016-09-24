@@ -1,2 +1,2 @@
-var myApp=angular.module("myApp",[]);myApp.controller("mainView",["$scope",function(a){console.log("NG")}]);
+var myApp=angular.module("myApp",["ngRoute"]);myApp.config(["$routeProvider",function(a){a.when("/home",{templateUrl:"/views/about.htm"}).when("/add",{templateUrl:"/views/add.htm"}).when("/pets",{templateUrl:"/views/pets.htm"}).otherwise({redirectTo:"/home"})}]);
 //# sourceMappingURL=script.js.map

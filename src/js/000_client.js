@@ -1,7 +1,17 @@
-var myApp = angular.module( 'myApp', [] );
+var myApp = angular.module("myApp", ["ngRoute"]);
 
-myApp.controller( 'mainView', [ '$scope', function( $scope ) {
-
-	console.log( "NG" );
-
+myApp.config(["$routeProvider", function($routeProvider){
+    $routeProvider.
+      when("/home", {
+        templateUrl: "/views/about.htm"
+      }).
+      when("/add", {
+        templateUrl: "/views/add.htm"
+      }).
+      when("/pets", {
+        templateUrl: "/views/pets.htm"
+      }).
+      otherwise({
+        redirectTo: "/home"
+      });
 }]);
