@@ -18,13 +18,13 @@ myApp.config(["$routeProvider", function($routeProvider){
 	});
 }]);
 
-myApp.controller( 'homeController', [ '$scope', function( $scope ) {
+myApp.controller( 'homeController', [ '$scope', '$http', function( $scope, $http ) {
 
 	console.log('Home Controller');
 
 }]);
 
-myApp.controller( 'addController', [ '$scope', '$http', function( $scope, $http ) {
+myApp.controller( 'addController', [ '$scope', '$http', '$location', function( $scope, $http, $location ) {
 
 	console.log( 'Add Pet Controller' );
 
@@ -46,6 +46,8 @@ myApp.controller( 'addController', [ '$scope', '$http', function( $scope, $http 
 
 			console.log( 'Added!', result );
 
+			$location.path( 'pets' );
+
 		});
 
 	};
@@ -54,8 +56,21 @@ myApp.controller( 'addController', [ '$scope', '$http', function( $scope, $http 
 
 }]);
 
-myApp.controller( 'viewController', [ '$scope', function( $scope ) {
+myApp.controller( 'viewController', [ '$scope', '$http', function( $scope, $http ) {
 
 	console.log( 'View Pets Controller' );
+
+	$scope.pets = [];
+
+	$http({
+		method: 'GET',
+		url: '/pets'
+	}).then( function( result ) {
+
+		console.log( 'GET result', result );
+
+		$scope.pets = result.data;
+
+	});
 
 }]);
