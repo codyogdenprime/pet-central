@@ -1,3 +1,3 @@
-body{max-width:50em;margin:0 auto}nav ul{list-style-type:none;display:-ms-flexbox;display:flex;width:100%;-ms-flex-pack:distribute;justify-content:space-around;margin:0;padding:0}
+body{max-width:50em;margin:0 auto}header{margin-bottom:2em}nav ul{list-style-type:none;display:-ms-flexbox;display:flex;width:100%;-ms-flex-pack:distribute;justify-content:space-around;margin:0;padding:0}.cat{width:50%;max-width:50%}.cat img{width:100%}.container{display:-ms-flexbox;display:flex}.container>div{-ms-flex:0 0 50%;flex:0 0 50%}.meep-speak{font-size:2.25em;font-family:'Caveat Brush', cursive}#addForm input[type="text"]{width:100%;box-sizing:border-box;margin:0;font-size:2em}
 
 /*# sourceMappingURL=style.css.map */

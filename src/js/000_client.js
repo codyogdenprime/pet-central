@@ -9,6 +9,9 @@ myApp.config(["$routeProvider", function($routeProvider){
 		templateUrl: "/views/add.htm",
 		controller: 'addController'
 	}).
+	when("/submit", {
+		templateUrl: "/views/add_finish.htm"
+	}).
 	when("/pets", {
 		templateUrl: "/views/pets.htm",
 		controller: 'viewController'
@@ -45,7 +48,7 @@ myApp.controller( 'addController', [ '$scope', '$http', '$location', function( $
 		}).then( function( result ) {
 			console.log( 'Added!', result );
 
-			$location.path( 'pets' );
+			$location.path( 'submit' ); 
 		});
 	};
 }]);

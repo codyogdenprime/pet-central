@@ -3,6 +3,10 @@ body {
 	margin: 0 auto;
 }
 
+header {
+	margin-bottom: 2em;
+}
+
 nav ul {
 	list-style-type: none;
 	display: flex;
@@ -10,4 +14,33 @@ nav ul {
 	justify-content: space-around;
 	margin: 0;
 	padding: 0;
+}
+
+.cat {
+	width: 50%;
+	max-width: 50%;
+	img {
+		width: 100%;
+	}
+}
+
+.container {
+	display: flex;
+	& > div {
+		flex: 0 0 50%;
+	}
+}
+
+.meep-speak {
+	font-size: 2.25em;
+	font-family: 'Caveat Brush', cursive;
+}
+
+#addForm {
+	input[type="text"] {
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0;
+		font-size: 2em;
+	}
 }

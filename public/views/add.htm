@@ -1,7 +1,13 @@
-<form ng-submit="addPet()">
-	<input type="text" ng-model="pet_name" placeholder="Pet Name" />
-	<input type="text" ng-model="pet_age" placeholder="Age" />
-	<input type="text" ng-model="pet_type" placeholder="Species" />
-	<input type="text" ng-model="pet_photo" placeholder="Image URL" />
-	<input type="submit" />
-</form>
+<div class="container">
+	<div class="cat"><img src="images/cat_face.svg" /></div>
+
+	<form id="addForm" ng-submit="addPet()">
+	<div class="meep-speak">Fill in your pet's info!</div>
+		<input type="text" ng-model="pet_name" placeholder="Pet Name" />
+		<input type="text" ng-model="pet_age" placeholder="Age" />
+		<input type="text" ng-model="pet_type" placeholder="Species" />
+		<input type="text" ng-model="pet_photo" placeholder="Image URL" />
+		<input type="submit" />
+	</form>
+
+</div>
