@@ -8,9 +8,21 @@
 		<script src="angular.js"></script>
 		<script src="script.js"></script>
 	</head>
-	<body>
-		<header></header>
-		<main ng-app="myApp" ng-controller="mainView"></main>
+	<body ng-app="myApp">
+		<header>
+			<nav>
+					
+				<ul>
+
+					<li>Home</li>
+					<li>View Pets</li>
+					<li>Add Pet</li>
+
+				</ul>
+
+			</nav>
+		</header>
+		<main ng-controller="mainView"></main>
 		<footer></footer>
 	</body>
 </html>

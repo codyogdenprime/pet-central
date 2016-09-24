@@ -25,3 +25,6 @@ app.listen( port, () => {
 
 const indexRoute = require( './routes/index' );
 app.use( '/', indexRoute );
+
+const pets = require( './routes/pets' );
+app.use( '/pets', pets );
