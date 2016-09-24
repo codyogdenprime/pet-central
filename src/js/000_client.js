@@ -56,21 +56,56 @@ myApp.controller( 'addController', [ '$scope', '$http', '$location', function( $
 
 }]);
 
-myApp.controller( 'viewController', [ '$scope', '$http', function( $scope, $http ) {
+myApp.controller( 'viewController', [ '$scope', '$http', '$location', function( $scope, $http, $location ) {
 
 	console.log( 'View Pets Controller' );
 
 	$scope.pets = [];
 
-	$http({
-		method: 'GET',
-		url: '/pets'
-	}).then( function( result ) {
+	$scope.displayPets = function() {
+		$http({
+			method: 'GET',
+			url: '/pets'
+		}).then( function( result ) {
 
-		console.log( 'GET result', result );
+			console.log( 'GET result', result );
 
-		$scope.pets = result.data;
+			$scope.pets = result.data;
 
-	});
+		});
+	};
+
+	// Display pets on load
+
+	$scope.displayPets();
+
+	$scope.removePet = function() {
+
+		console.log( 'delete pet', this.pet._id );
+
+		var petObj = {
+
+			_id: this.pet._id
+
+		};
+
+		console.log( 'Delete this pet:', petObj );
+
+		var confirmDelete = confirm( 'Are you sure you want to delete ' + this.pet.name + '?' );
+
+		if( confirmDelete ){
+			$http({
+				method: 'DELETE',
+				url: '/pets'
+			}).then( function( result ) {
+
+				console.log( 'DELETE result', result );
+
+				$scope.displayPets();
+
+			});
+		}
+
+	};
 
 }]);

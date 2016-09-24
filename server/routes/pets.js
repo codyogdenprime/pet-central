@@ -44,9 +44,9 @@ pets.route( '/' )
 	});
 } )
 .delete( ( req, res ) => {
-	console.log( ' /pets', req.body );
+	console.log( 'DELETE /pets', req.body );
 
-	Pet.remove( { _id: req.body.id }, ( err, result ) => {
+	Pet.remove( req.body, ( err, result ) => {
 		if( err )
 			return console.log( 'Mongoose Err:', err );
 
