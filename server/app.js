@@ -22,10 +22,12 @@ app.use( express.static( filepath.resolve( './node_modules/angular') ) );
 app.use( express.static( filepath.resolve( './node_modules/angular-route') ) );
 app.use( express.static( filepath.resolve( './public/') ) );
 
+// Require and setup Mongoose
 const mongoURI = config.db_url;
 const mongoose = require('mongoose');
 const MongoDB = mongoose.connect( mongoURI ).connection;
 
+// If there is an error connecting, let us know
 MongoDB.on( 'error', ( err ) => {
     console.log( 'mongodb connection error:', err);
 });
@@ -36,15 +38,12 @@ MongoDB.once( 'open', () => {
     app.listen( port, () => {
     	console.log( 'App is listening.' );
     } );
-} );/*
+} );
 
-// Listen up!
-app.listen( port, () => {
-	console.log( 'App is listening on:', port );
-} );*/
-
+// Require index.js routes to server index.html
 const indexRoute = require( './routes/index' );
 app.use( '/', indexRoute );
 
+// Contains the API Routes
 const pets = require( './routes/pets' );
 app.use( '/pets', pets );
