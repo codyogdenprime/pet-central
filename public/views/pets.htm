@@ -1,7 +1,7 @@
 <ul>
 	<li ng-repeat="pet in pets">
 
-	{{ pet.name }} - {{ pet.species }} - {{ pet.age }} - {{ pet.image_url }} - <button ng-click="removePet()">Remove Pet</button>
+	<div class="pet-photo-container"><img class="pet-photo" src="{{ pet.image_url }}" /></div> - {{ pet.name }} - {{ pet.species }} - {{ pet.age }} -  - <button ng-click="removePet()">Remove Pet</button>
 
 	</li>
 </ul>

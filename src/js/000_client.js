@@ -17,7 +17,7 @@ myApp.config(["$routeProvider", function($routeProvider){
 		controller: 'viewController'
 	}).
 	otherwise({
-	
+		redirectTo: "/home"
 	});
 }]);
 
